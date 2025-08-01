@@ -4,8 +4,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
-import { Settings, Info, Users, Bot } from "lucide-react"
+import { Settings, Info, Users, Bot, ArrowLeft } from "lucide-react"
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 type Marcador = string
 export default function TicTacToe() {
@@ -13,6 +14,7 @@ export default function TicTacToe() {
     const [showDialog, setShowDialog] = useState(false)
     const [ganador, setGanador] = useState<Marcador>('')
     const [modoBot, setModoBot] = useState(false)
+    const router = useRouter()
 
 
     const ganar = [
@@ -318,6 +320,12 @@ export default function TicTacToe() {
                         </div>
                     </SheetContent>
                 </Sheet>
+                <Button
+                    variant="outline" size="icon" className="bg-white/20 border-white/30 text-white hover:bg-white/30 fixed md:top-6 md:left-6 top-2 left-2"
+                    onClick={() => router.back()}
+                >
+                    <ArrowLeft className="h-5 w-5" />
+                </Button>
             </div>
 
             <div className=" flex flex-col md:flex-row items-center justify-center gap-4 h-[360px]">
