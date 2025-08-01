@@ -88,3 +88,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes glow-contrast {
+  0% {
+    text-shadow: 0 0 2px #4718ac, 0 0 2px #b73838, 0 0 2px rgb(3, 235, 235);
+  }
+  50% {
+    text-shadow: 0 0 3px #4f2d2d, 0 0 3px rgb(211, 140, 211), 0 0 3px rgb(95, 209, 60);
+  }
+  100% {
+    text-shadow: 0 0 2px #d35757, 0 0 2px rgb(241, 14, 241), 0 0 2px rgb(161, 222, 222);
+  }
+}
+
+.animate-glow-contrast {
+  animation: glow-contrast 3s ease-in-out infinite;
+}
+
