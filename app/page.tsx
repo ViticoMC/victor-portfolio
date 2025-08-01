@@ -120,11 +120,15 @@ export default function Portfolio() {
                 <Contact className="w-4 h-4 ml-2 mt-1" />
 
               </a>
-              <Link href="/minijuegos" className="flex text-gray-600 hover:text-purple-600 transition-colors">
+              <Link href="/minijuegos" className="flex text-gray-600 hover:text-purple-600 transition-colors ">
                 Minijuegos
                 <Gamepad2 className="w-4 h-4 ml-2 mt-1" />
               </Link>
             </div>
+            <Link href="/minijuegos" className=" lg:hidden flex text-gray-600 hover:text-purple-600 transition-colors ">
+              Minijuegos
+              <Gamepad2 className="w-4 h-4 ml-2 mt-1" />
+            </Link>
           </div>
         </div>
       </nav>
