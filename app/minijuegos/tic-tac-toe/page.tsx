@@ -242,7 +242,7 @@ export default function TicTacToe() {
 
     return (
         <section className="min-h-screen h-auto bg-gradient-to-t from-purple-500 to-violet-500  pt-4 flex flex-col items-center gap-2 ">
-            <div className="flex items-center justify-center w-full max-w-4xl px-4 mb-5 md:mb-2">
+            <div className="flex items-center justify-center w-full max-w-4xl px-4 mb-5 md:mb-2 mt-10 md:mt-0">
                 <h1 className="md:-translate-x-6 text-5xl md:text-6xl font-extrabold text-center bg-gradient-to-r from-white via-gray-200 to-slate-200 bg-clip-text text-transparent drop-shadow-[0_0_2px_rgba(255,255,122,0.9)]">
                     TIC TAC TOE
                 </h1>
