@@ -292,30 +292,14 @@ export default function TicTacToe() {
                                     <Info className="h-5 w-5" />
                                     Información
                                 </h3>
-                                {/* <div className="space-y-3 text-sm">
-                                    <div className="bg-white/10 p-3 rounded-lg">
-                                        <h4 className="font-semibold mb-2">Tecnologías Utilizadas:</h4>
-                                        <ul className="space-y-1 text-white/90">
-                                            <li>• Next.js 14 con App Router</li>
-                                            <li>• TypeScript para tipado estático</li>
-                                            <li>• Tailwind CSS para estilos</li>
-                                            <li>• Shadcn/ui para componentes</li>
-                                            <li>• React Hooks para estado</li>
-                                        </ul>
-                                    </div>
-
-                                    <div className="bg-white/10 p-3 rounded-lg">
-                                        <h4 className="font-semibold mb-2">Características:</h4>
-                                        <ul className="space-y-1 text-white/90">
-                                            <li>• Modo multijugador local</li>
-                                            <li>• Modo contra bot inteligente</li>
-                                            <li>• Marcadores personalizables</li>
-                                            <li>• Nombres de jugadores editables</li>
-                                            <li>• Diseño responsive</li>
-                                            <li>• Animaciones y efectos visuales</li>
-                                        </ul>
-                                    </div>
-                                </div> */}
+                                <h2 className="text-md mt-2 font-medium">Algoritmo desarrollado por mí</h2>
+                                <ul className="list-disc list-inside mt-1 text-sm text-white space-y-1">
+                                    <li>Bot diseñado para jugar Tic-Tac-Toe con una estrategia invencible.</li>
+                                    <li>Utiliza lógica de juego perfecta, evaluando cada movimiento posible.</li>
+                                    <li>Aplica principios de minimax para garantizar empates o victorias, nunca derrota.</li>
+                                    <li>Capaz de adaptarse dinámicamente a la jugada del oponente.</li>
+                                    <li>Ideal para demostrar razonamiento algorítmico, control de flujo y toma de decisiones estratégicas.</li>
+                                </ul>
                             </div>
                         </div>
                     </SheetContent>
