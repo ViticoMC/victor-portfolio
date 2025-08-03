@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Minijuegos() {
     return (
@@ -10,7 +11,7 @@ export default function Minijuegos() {
                     ¡Bienvenido a Mis Minijuegos!
                 </h1>
                 <Button
-                    variant="outline" size="icon" className="bg-white/20 border-white/30 text-white hover:bg-white/30 fixed md:top-11 md:left-10 top-2 left-2"
+                    variant="outline" size="icon" className="bg-white/20 border-white/30 text-white hover:bg-white/30 absolute md:top-11 md:left-10 top-2 left-2"
                 >
                     <Link href="/">
                         <ArrowLeft className="h-5 w-5" />
@@ -24,32 +25,38 @@ export default function Minijuegos() {
                         gridTemplateRows: "repeat(3, 1fr)"
                     }
                 }>
-                <Link href="/minijuegos/tic-tac-toe" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Tic Tac Toe</h2>
+                <Link href="/minijuegos/tic-tac-toe"
+                    style={{
+                        backgroundImage: `url('/games/tic-tac-toe.png')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                    className="border-2 border-white bg-white rounded-lg p-4 h-[250px] relative ">
+                    <h2 className="text-xl font-semibold backdrop-blur-2xl text-white absolute bottom-0 left-1/2 -translate-x-1/2 p-1 rounded-lg">Tic Tac Toe</h2>
                 </Link>
-                <Link href="/minijuegos/snake" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Snake</h2>
+                <Link href="/minijuegos/snake" className="bg-white rounded-lg p-4 h-[250px] ">
+                    <h2 className="text-xl font-semibold">Coming soon...</h2>
                 </Link>
-                <Link href="/minijuegos/tetris" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Tetris</h2>
+                <Link href="/minijuegos/tetris" className="bg-white rounded-lg p-4 h-[250px] ">
+                    <h2 className="text-xl font-semibold">Coming soon...</h2>
                 </Link>
-                <Link href="/minijuegos/pong" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Pong</h2>
+                <Link href="/minijuegos/pong" className="bg-white rounded-lg p-4 h-[250px] ">
+                    <h2 className="text-xl font-semibold">Coming soon...</h2>
                 </Link>
-                <Link href="/minijuegos/memory" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Memory</h2>
+                <Link href="/minijuegos/memory" className="bg-white rounded-lg p-4 h-[250px] ">
+                    <h2 className="text-xl font-semibold">Coming soon...</h2>
                 </Link>
-                <Link href="/minijuegos/puzzle" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Puzzle</h2>
+                <Link href="/minijuegos/puzzle" className="bg-white rounded-lg p-4 h-[250px] ">
+                    <h2 className="text-xl font-semibold">Coming soon...</h2>
                 </Link>
-                <Link href="/minijuegos/breakout" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Breakout</h2>
+                <Link href="/minijuegos/breakout" className="bg-white rounded-lg p-4 h-[250px] ">
+                    <h2 className="text-xl font-semibold">Coming soon...</h2>
                 </Link>
-                <Link href="/minijuegos/pacman" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Pac-Man</h2>
+                <Link href="/minijuegos/pacman" className="bg-white rounded-lg p-4 h-[250px] ">
+                    <h2 className="text-xl font-semibold">Coming soon...</h2>
                 </Link>
-                <Link href="/minijuegos/sudoku" className="bg-white rounded-lg p-4 h-[250px] flex items-center justify-center hover:bg-gray-50 transition-colors">
-                    <h2 className="text-xl font-semibold">Sudoku</h2>
+                <Link href="/minijuegos/sudoku" className="bg-white rounded-lg p-4 h-[250px] ">
+                    <h2 className="text-xl font-semibold">Coming soon...</h2>
                 </Link>
             </div>
         </section>
