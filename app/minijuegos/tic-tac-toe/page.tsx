@@ -137,6 +137,7 @@ export default function TicTacToe() {
             }
             if (marcador[i] === 'X') {
                 casillasRival.push(i)
+
             }
         }
 
@@ -147,42 +148,42 @@ export default function TicTacToe() {
         }
 
         if (inmediateGanarBot.length > 0 && casillasVacias.includes(inmediateGanarBot[0])) {
-            console.log("inmediateGanarBot")
+
             updateMarcador(inmediateGanarBot[0], jugador)
             setJugador('X')
             return
         }
 
         if (inmediateGanar.length > 0 && casillasVacias.includes(inmediateGanar[0])) {
-            console.log("inmediateGanar")
+
             updateMarcador(inmediateGanar[0], jugador)
             setJugador('X')
             return
         }
+
         if (
             casillasRival.includes(0) || casillasRival.includes(2) || casillasRival.includes(6) || casillasRival.includes(8)
         ) {
-            console.log("casillasRival")
+
             if (casillasRival[0] === 0 && casillasVacias.includes(1)) {
-                console.log("1")
-                updateMarcador(1, jugador)
+                if (casillasRival[1] == 7) updateMarcador(3, jugador)
+                else updateMarcador(1, jugador)
+
                 setJugador('X')
                 return
             } else if (casillasRival[0] === 2 && casillasVacias.includes(5)) {
-                console.log("5")
-
-                updateMarcador(5, jugador)
+                if (casillasRival[1] == 3) updateMarcador(1, jugador)
+                else updateMarcador(5, jugador)
                 setJugador('X')
                 return
-            } else if (casillasRival[6] === 0 && casillasVacias.includes(3)) {
-                console.log("3")
-                updateMarcador(3, jugador)
+            } else if (casillasRival[1] === 6 && casillasVacias.includes(3)) {
+                if (casillasRival[0] == 5) updateMarcador(7, jugador)
+                else updateMarcador(3, jugador)
                 setJugador('X')
                 return
-            } else if (casillasRival[8] === 2 && casillasVacias.includes(7)) {
-                console.log("7")
-
-                updateMarcador(7, jugador)
+            } else if (casillasRival[1] === 8 && casillasVacias.includes(7)) {
+                if (casillasRival[0] == 2) updateMarcador(5, jugador)
+                else updateMarcador(7, jugador)
                 setJugador('X')
                 return
             }

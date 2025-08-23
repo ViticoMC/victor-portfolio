@@ -29,6 +29,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
+
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -180,24 +181,30 @@ export default function Portfolio() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
-                <Button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contactar
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-purple-200 text-purple-600 hover:bg-purple-50 bg-transparent"
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </Button>
-                <Button
+                <Link href={"https://wa.me/+5356643955"}>
+                  <Button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Contactar
+                  </Button>
+
+                </Link>
+                <Link href={"https://github.com/ViticoMC"}>
+                  <Button
+                    variant="outline"
+                    className="border-purple-200 text-purple-600 hover:bg-purple-50 bg-transparent"
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub
+                  </Button>
+
+                </Link>
+                {/* <Button
                   variant="outline"
                   className="border-purple-200 text-purple-600 hover:bg-purple-50 bg-transparent"
                 >
                   <Globe className="w-4 h-4 mr-2" />
                   Portafolio
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
@@ -481,18 +488,24 @@ export default function Portfolio() {
           <p className="text-xl text-purple-100 mb-8">Estoy disponible para nuevos proyectos y oportunidades</p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
-              <Mail className="w-4 h-4 mr-2" />
-              victormanuelmartinezcampo178@gmail.com
-            </Button>
-            <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
-              <MessageCircle className="w-4 h-4 mr-2" />
-              WhatsApp
-            </Button>
-            <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
-            </Button>
+            <Link href={"mailto:victormanuelmartinezcampo178@gmail.com"}>
+              <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
+                <Mail className="w-4 h-4 mr-2" />
+                victormanuelmartinezcampo178@gmail.com
+              </Button>
+            </Link>
+            <Link href={"https://wa.me/+5356643955"}>
+              <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                WhatsApp
+              </Button>
+            </Link>
+            <Link href={""}>
+              <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
+                <Linkedin className="w-4 h-4 mr-2" />
+                LinkedIn
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -500,7 +513,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400">© 2025 Victor Manuel Martínez Campo. Desarrollado con ❤️ y Next.js</p>
+          <p className="text-gray-400">© 2025 Victor Manuel Martínez Campo</p>
         </div>
       </footer>
     </div>
