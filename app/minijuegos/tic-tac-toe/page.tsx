@@ -58,7 +58,8 @@ export default function TicTacToe() {
         for (const combinacion of ganar) {
             const [a, b, c] = combinacion
             if (marcador[a] === 'O' || marcador[b] === 'O' || marcador[c] === 'O') {
-                ganarBloqueados.push([a, b, c])
+                const cadena = "" + a + b + c;
+                ganarBloqueados.push(cadena)
             }
             if (
                 marcador[a] === 'O'
@@ -82,31 +83,15 @@ export default function TicTacToe() {
         }
 
 
-        const posiblesGanar = []
+
         const inmediateGanar = []
         for (const combinacion of ganar) {
             const [a, b, c] = combinacion
-            let bloqueoEncontrado = false
-            for (const bloqueo of ganarBloqueados) {
-                if (bloqueo.includes(a) && bloqueo.includes(b) && bloqueo.includes(c)) {
-                    bloqueoEncontrado = true
-                    break
-                }
-            }
-            if (
-                (marcador[a] === 'X'
-                    || marcador[b] === 'X'
-                    || marcador[c] === 'X')
-                && !bloqueoEncontrado
-            ) {
-                posiblesGanar.push([a, b, c])
-            }
             if (
                 (marcador[a] === 'X'
                     && marcador[b] === 'X'
                     && marcador[c] === ''
                 )
-                && !bloqueoEncontrado
             ) {
                 inmediateGanar.push(c)
             } else if (
@@ -114,7 +99,6 @@ export default function TicTacToe() {
                     && marcador[c] === 'X'
                     && marcador[b] === ''
                 )
-                && !bloqueoEncontrado
             ) {
                 inmediateGanar.push(b)
             } else if (
@@ -122,7 +106,6 @@ export default function TicTacToe() {
                     && marcador[c] === 'X'
                     && marcador[a] === ''
                 )
-                && !bloqueoEncontrado
             ) {
                 inmediateGanar.push(a)
             }
@@ -161,29 +144,68 @@ export default function TicTacToe() {
             return
         }
 
+        for (let i = 0; i < casillasRival.length; i++) {
+            for (let j = 0; j < casillasRival.length; j++) {
+                if (j === i) continue
+                if (casillasRival[i] + casillasRival[j] === 4) {
+                    updateMarcador(0, jugador)
+                    setJugador('X')
+                    return
+                } else if (casillasRival[i] + casillasRival[j] === 6) {
+                    updateMarcador(2, jugador)
+                    setJugador('X')
+                    return
+                } else if (casillasRival[i] + casillasRival[j] === 10) {
+                    updateMarcador(6, jugador)
+                    setJugador('X')
+                    return
+                } else if (casillasRival[i] + casillasRival[j] === 12) {
+                    updateMarcador(8, jugador)
+                    setJugador('X')
+                    return
+                }
+
+            }
+        }
+
         if (
             casillasRival.includes(0) || casillasRival.includes(2) || casillasRival.includes(6) || casillasRival.includes(8)
         ) {
 
             if (casillasRival[0] === 0 && casillasVacias.includes(1)) {
-                if (casillasRival[1] == 7) updateMarcador(3, jugador)
+                if (casillasRival[1] == 7 && casillasVacias.includes(3)) updateMarcador(3, jugador)
                 else updateMarcador(1, jugador)
-
                 setJugador('X')
                 return
             } else if (casillasRival[0] === 2 && casillasVacias.includes(5)) {
-                if (casillasRival[1] == 3) updateMarcador(1, jugador)
+                console.log("estoy aqui ")
+                if (casillasRival[1] == 3 && casillasVacias.includes(1)) updateMarcador(1, jugador)
                 else updateMarcador(5, jugador)
                 setJugador('X')
                 return
             } else if (casillasRival[1] === 6 && casillasVacias.includes(3)) {
-                if (casillasRival[0] == 5) updateMarcador(7, jugador)
+                if (casillasRival[0] == 5 && casillasVacias.includes(7)) updateMarcador(7, jugador)
                 else updateMarcador(3, jugador)
                 setJugador('X')
                 return
             } else if (casillasRival[1] === 8 && casillasVacias.includes(7)) {
-                if (casillasRival[0] == 2) updateMarcador(5, jugador)
+                if (casillasRival[0] == 2 && casillasVacias.includes(5)) updateMarcador(5, jugador)
                 else updateMarcador(7, jugador)
+                setJugador('X')
+                return
+            }
+        }
+
+
+
+        for (const combinacion of ganar) {
+            const [a, b, c] = combinacion
+            const str = "" + a + b + c
+            if (!ganarBloqueados.includes(str)) {
+                if (casillasVacias.includes(a)) updateMarcador(a, jugador)
+                else if (casillasVacias.includes(b)) updateMarcador(b, jugador)
+                else updateMarcador(c, jugador)
+
                 setJugador('X')
                 return
             }
@@ -191,22 +213,23 @@ export default function TicTacToe() {
 
         for (const casilla of casillasVacias) {
 
-            for (const combinacion of posiblesGanar) {
-                const [a, b, c] = combinacion
-                if (casilla === a) {
-                    updateMarcador(a, jugador)
-                    setJugador('X')
-                    return
-                } else if (casilla === b) {
-                    updateMarcador(b, jugador)
-                    setJugador('X')
-                    return
-                } else if (casilla === c) {
-                    updateMarcador(c, jugador)
-                    setJugador('X')
-                    return
-                }
-            }
+            // for (const combinacion of posiblesGanar) {
+            //     const [a, b, c] = combinacion
+            //     console.log(combinacion)
+            //     if (casilla === a) {
+            //         updateMarcador(a, jugador)
+            //         setJugador('X')
+            //         return
+            //     } else if (casilla === b) {
+            //         updateMarcador(b, jugador)
+            //         setJugador('X')
+            //         return
+            //     } else if (casilla === c) {
+            //         updateMarcador(c, jugador)
+            //         setJugador('X')
+            //         return
+            //     }
+            // }
         }
     }
 
