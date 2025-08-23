@@ -181,14 +181,14 @@ export default function Portfolio() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href={"https://wa.me/+5356643955"}>
+                <a href={"https://wa.me/+5356643955"}>
                   <Button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700">
                     <Mail className="w-4 h-4 mr-2" />
                     Contactar
                   </Button>
 
-                </Link>
-                <Link href={"https://github.com/ViticoMC"}>
+                </a>
+                <a href={"https://github.com/ViticoMC"}>
                   <Button
                     variant="outline"
                     className="border-purple-200 text-purple-600 hover:bg-purple-50 bg-transparent"
@@ -197,7 +197,7 @@ export default function Portfolio() {
                     GitHub
                   </Button>
 
-                </Link>
+                </a>
                 {/* <Button
                   variant="outline"
                   className="border-purple-200 text-purple-600 hover:bg-purple-50 bg-transparent"
@@ -488,24 +488,24 @@ export default function Portfolio() {
           <p className="text-xl text-purple-100 mb-8">Estoy disponible para nuevos proyectos y oportunidades</p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Link href={"mailto:victormanuelmartinezcampo178@gmail.com"}>
+            <a href={"mailto:victormanuelmartinezcampo178@gmail.com"}>
               <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
                 <Mail className="w-4 h-4 mr-2" />
                 victormanuelmartinezcampo178@gmail.com
               </Button>
-            </Link>
-            <Link href={"https://wa.me/+5356643955"}>
+            </a>
+            <a href={"https://wa.me/+5356643955"}>
               <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
                 <MessageCircle className="w-4 h-4 mr-2" />
                 WhatsApp
               </Button>
-            </Link>
-            <Link href={""}>
+            </a>
+            <a href={"https://www.linkedin.com/in/victor-mc/"}>
               <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
                 <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
