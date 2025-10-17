@@ -135,7 +135,7 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div
             className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -166,8 +166,19 @@ export default function Portfolio() {
                 <br />
                 Martínez Campo
               </h1>
-
-              <p className="text-xl md:text-2xl text-gray-600 mb-6">Desarrollador Frontend</p>
+              <div className="flex text-xl md:text-2xl gap-2 justify-center">
+                <span className="text-purple-800">|</span >
+                {
+                  ["Desarrollador Frontend", "React.js", "Next.js"].map((skill, index) => (
+                    <>
+                      <p key={index} className=" text-gray-600 mb-6">
+                        {skill}
+                      </p>
+                      <span className="text-purple-800 ">|</span >
+                    </>
+                  ))
+                }
+              </div>
 
               <div className="flex items-center justify-center space-x-2 text-gray-500 mb-8">
                 <MapPin className="w-5 h-5" />
@@ -181,13 +192,14 @@ export default function Portfolio() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
-                <a href={"https://wa.me/+5356643955"}>
+                <a href={"https://www.linkedin.com/in/victor-mc/"} target="_blank">
                   <Button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700">
-                    <Mail className="w-4 h-4 mr-2" />
-                    Contactar
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    LinkedIn
                   </Button>
 
                 </a>
+
                 <a href={"https://github.com/ViticoMC"}>
                   <Button
                     variant="outline"
